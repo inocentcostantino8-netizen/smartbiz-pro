@@ -1,0 +1,227 @@
+/* ==========================================
+   GLOBAL STYLES (css/global.css)
+   ========================================== */
+   :root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --bg-light: #f3f4f6;
+    --white: #ffffff;
+    --border-color: #d1d5db;
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container Kuu ya Login (Inayounganisha Kushoto na Kulia) */
+.login-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+/* ==========================================
+   LOGIN STYLES (css/login.css)
+   ========================================== */
+
+/* UPANDE WA KUSHOTO: Brand & Image */
+.brand-panel {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px;
+    color: var(--white);
+    background-color: #111827; /* Rangi ya nyuma ikiwa picha inachelewa kuload */
+}
+
+.brand-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.login-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45; /* Inafanya picha iwe giza kidogo ili maandishi yasomeke */
+}
+
+.brand-content {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.brand-logo {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.brand-subtitle {
+    font-size: 1.25rem;
+    color: #e5e7eb;
+    font-weight: 400;
+}
+
+/* UPANDE WA KULIA: Fomu ya Kuingia */
+.form-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: var(--white);
+}
+
+.form-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+.mobile-logo {
+    display: none; /* Inafichwa kwenye kompyuta */
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.form-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
+
+/* Mitindo ya Vitu vya Ndani ya Fomu */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    outline: none;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Chaguzi za Fomu (Nikumbuke & Umesahau nenosiri) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-bottom: 24px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+}
+
+.forgot-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Kitufe cha Login */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-login:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (Kwa ajili ya Simu)
+   ========================================== */
+@media (max-width: 968px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .brand-panel {
+        display: none; /* Inaficha upande wa picha kwenye simu */
+    }
+
+    .form-panel {
+        padding: 40px 20px;
+    }
+
+    .mobile-logo {
+        display: block; /* Inafungua nembo ya simu */
+    }
+}

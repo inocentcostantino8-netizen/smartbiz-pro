@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sw">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SmartBiz - Dashboard</title>
+        
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/dashboard.css">
+        
+        <!-- MPANGILIO SAHIHI WA SCRIPT ZA NDANI -->
+        <script src="js/chart.js"></script> <!-- Hili lianze kwanza kabisa -->
+        <script src="js/api.js" defer></script>
+        <script src="js/auth.js" defer></script>
+        <script src="js/router.js" defer></script>
+    </head>
+    
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- ==========================================
+             1. MENYU YA PEMBENI (SIDEBAR)
+             ========================================== -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>SmartBiz</h2>
+                <span class="brand-badge">PRO</span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <p class="menu-category">Mkuu</p>
+                <a href="#" class="menu-item active" data-page="admin-dash">
+                    <span class="menu-icon">📊</span> Admin Dashboard
+                </a>
+                <a href="#" class="menu-item" data-page="pos">
+                    <span class="menu-icon">🛒</span> Point of Sale (POS)
+                </a>
+
+                <p class="menu-category">Biashara</p>
+                <a href="#" class="menu-item" data-page="inventory">
+                    <span class="menu-icon">📦</span> Inventory / Stock
+                </a>
+                <!-- TUMECHUKUA sales-records NA KUWEKA sales ILI KULINGANA NA JAVASCRIPT -->
+                <a href="#" class="menu-item" data-page="sales"> 
+                    <span class="menu-icon">🧾</span> Sales & Invoices
+                </a>
+                <a href="#" class="menu-item" data-page="expenses">
+                    <span class="menu-icon">💸</span> Expense Tracker
+                </a>                
+                <p class="menu-category">Watu & Ripoti</p>
+                <a href="#" class="menu-item" data-page="customers">
+                    <span class="menu-icon">👥</span> Customers Profile
+                </a>
+                <a href="#" class="menu-item" data-page="hr-staff">
+                    <span class="menu-icon">🛡️</span> HR & Role Access
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="btnLogout" class="btn-logout">
+                    <span class="menu-icon">🚪</span> Toka Mfomuni
+                </button>
+            </div>
+        </aside>
+
+        <!-- ==========================================
+             2. SEHEMU KUU YA MAUDHUI (MAIN CONTENT AREA)
+             ========================================== -->
+             <main class="main-content">
+    
+                <!-- SEHEMU YA JUU (TOP NAVBAR) -->
+                <header class="top-navbar">
+                    <div class="page-title">
+                        <h1 id="current-view-title">Admin Dashboard</h1>
+                        <p id="current-view-date">Karibu kwenye mfumo wa uendeshaji</p>
+                    </div>
+            
+                    <div class="user-profile-section">
+            
+                        <!-- KENGELE YA TAARIFA (NOTIFICATIONS) -->
+                        <div class="notification-dropdown-wrapper">
+                            <button id="btnNotification" class="btn-notification">
+                                🔔
+                                <span class="notification-badge">3</span>
+                            </button>
+                            <!-- Dirisha la taarifa litakalofunguka likibonyezwa -->
+                            <div class="notification-dropdown" id="notificationDropdown">
+                                <div class="dropdown-header">Taarifa Mpya</div>
+                                <div class="dropdown-body">
+                                    <div class="notification-item unread">
+                                        <p class="notif-text"><strong>Stoki ya Chini:</strong> Bidhaa 'Maji ya Kilimanjaro' imebaki chini ya pcs 5.</p>
+                                        <span class="notif-time">Dk 5 zilizopita</span>
+                                    </div>
+                                    <div class="notification-item unread">
+                                        <p class="notif-text"><strong>Meneja:</strong> Amepitisha punguzo jipya la POS la 5%.</p>
+                                        <span class="notif-time">Saa 1 lililopita</span>
+                                    </div>
+                                    <div class="notification-item">
+                                        <p class="notif-text"><strong>Mfumo:</strong> Backup ya hifadhidata imekamilika vizuri.</p>
+                                        <span class="notif-time">Jana</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- MAELEZO YA MTUMIAJI (ADMIN DETAILS) -->
+                        <div class="user-info">
+                            <span class="user-name">Juma Shabaan</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+            
+                        <!-- REKEBISHO KUU: Hapa ndipo picha ya wasifu inapokaa kitaalamu ndani ya Navbar -->
+                        <div class="user-avatar" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid #0d9488; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <img src="assets/images/istockphoto-2243953002-1024x1024.jpg" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+            
+                    </div>
+                </header>
+            
+                <!-- SEHEMU INAYOBADILIKA (DYNAMIC VIEW CONTAINER) -->
+                <section id="dynamic-content-view" class="view-container">
+                    
+                    <!-- Chombo kikuu kinachopokea Kadi, Grafu, na SQLite data kutoka router.js kiotomatiki -->
+                    <div id="dynamic-view-container">
+                        <p style="text-align: center; color: #64748b; padding: 2rem;">Inapakia mfumo mkuu wa grafu na takwimu kutoka database...</p>
+                    </div>
+            
+                </section>
+            
+            </main>
+            
+
+    </div>
+</body>
+</html>

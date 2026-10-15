@@ -1,0 +1,870 @@
+/* ==========================================================================
+   SMARTBIZ - PRODUCTION DASHBOARD SHELL CSS
+   ========================================================================== */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc; /* Rangi ya kijivu hafifu ya nyuma kama ya picha yako */
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* Muundo wa mzazi unaoshikilia Sidebar na Content */
+.dashboard-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   1. STYLES ZA MENYU YA PEMBENI (SIDEBAR)
+   ========================================================================== */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #0f172a; /* Rangi ya giza thabiti kutoka kwenye picha yako */
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-brand {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid #1e293b;
+}
+
+.sidebar-brand h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.brand-badge {
+    background-color: #0d9488; /* Teal badge */
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+}
+
+.menu-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #475569;
+    margin: 1.5rem 0 0.5rem 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.menu-category:first-child {
+    margin-top: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+/* Muonekano wa menyu iliyochaguliwa (Active State) */
+.menu-item.active {
+    background-color: #0d9488; /* Inabadilika kuwa Teal kama ya picha yako */
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.menu-icon {
+    font-size: 1.1rem;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid #1e293b;
+}
+
+.btn-logout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    color: #f1f5f9;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #ef4444; /* Rangi nyekundu mtumiaji akitaka kutoka */
+}
+
+/* ==========================================================================
+   2. STYLES ZA SEHEMU KUU (MAIN CONTENT AREA)
+   ========================================================================== */
+.main-content {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Sehemu ya juu (Top Navbar) */
+.top-navbar {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    flex-shrink: 0;
+}
+
+.page-title h1 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.page-title p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Profile ya Mtumiaji Juu Kulia */
+.user-profile-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.user-role {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #e2e8f0;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sehemu ya ndani ya kupachika maudhui (View Container) */
+.view-container {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Kadi ya mfano (Placeholder) */
+.placeholder-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 4rem auto 0 auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.placeholder-card h3 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+.placeholder-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+/* ==========================================================================
+   MAKADI YA TAKWIMU (METRIC CARDS ARCHITECTURE)
+   ========================================================================== */
+
+/* Grid inayoshikilia kadi zote nne */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Muundo wa Kadi Moja */
+.metric-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Taarifa za ndani ya kadi */
+.card-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b; /* Rangi ya kijivu iliyofifia kwa ajili ya vichwa vya habari vidogo */
+    margin-bottom: 0.5rem;
+}
+
+.card-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a; /* Rangi ya giza iliyokozwa */
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+/* Mienendo ya biashara (Asilimia za kupanda na kushuka) */
+.card-trend {
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.card-trend.up {
+    color: #10b981; /* Rangi ya Kijani kwa biashara inayokuwa */
+}
+
+.card-trend.down {
+    color: #ef4444; /* Rangi Nyekundu kwa biashara inayoshuka */
+}
+
+.card-trend.warning {
+    color: #f59e0b; /* Rangi ya Njano/Chungwa kwa tahadhari */
+}
+
+.trend-text {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.trend-icon {
+    font-size: 0.7rem;
+}
+
+/* Maeneo ya Icons na Rangi zake za Nyuma */
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+/* Rangi laini za nyuma (Background Tones) kwa ajili ya icons */
+.bg-teal-light { background-color: #ccfbf1; }
+.bg-blue-light { background-color: #dbeafe; }
+.bg-orange-light { background-color: #ffedd5; }
+.bg-purple-light { background-color: #f3e8ff; }
+
+
+/* ==========================================================================
+   KENGELE YA NOTIFICATION & DROPDOWN STYLES
+   ========================================================================== */
+   .notification-dropdown-wrapper {
+    position: relative;
+}
+
+.btn-notification {
+    background: #f1f5f9;
+    border: none;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease;
+}
+
+.btn-notification:hover {
+    background: #e2e8f0;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #ef4444; /* Badji nyekundu */
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+}
+
+/* Dirisha la notification (Linalofichwa hadi libonyezwe) */
+.notification-dropdown {
+    display: none; /* Inadhibitiwa na JS kufunguka */
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: 320px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* Likipata darasa la 'show' kupitia JS litaonekana */
+.notification-dropdown.show {
+    display: block;
+}
+
+.dropdown-header {
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid #e2e8f0;
+    color: #0f172a;
+}
+
+.notification-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.85rem;
+}
+
+.notification-item.unread {
+    background-color: #f0fdfa; /* Rangi ya teal hafifu kwa ujumbe mpya */
+}
+
+.notif-text {
+    color: #334155;
+    margin-bottom: 0.25rem;
+}
+
+.notif-time {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   DATA GRID (TABLE & TOP PRODUCTS LAYOUT)
+   ========================================================================== */
+.dashboard-data-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Kushoto ni kubwa (2x), Kulia ni ndogo (1x) */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.data-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.view-all-link {
+    font-size: 0.85rem;
+    color: #0d9488;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* Mfumo wa Jedwali (Table) */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.data-table th {
+    padding: 0.75rem 1rem;
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+}
+
+/* Hali ya Malipo Badges */
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-badge.success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Orodha ya Bidhaa Zinazoongoza (Top Products) */
+.top-products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.prod-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.prod-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.prod-sales {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.prod-amount {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Responsive kwa ajili ya Table na Products kushuka chini kwenye skrini ndogo */
+@media (max-width: 1024px) {
+    .dashboard-data-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Mitindo ya Msingi ya POS Layout */
+.pos-container {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 1.5rem;
+    height: 100%;
+}
+.pos-products-panel, .pos-cart-panel {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+.pos-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+}
+.pos-search-input:focus {
+    border-color: #0d9488;
+}
+
+
+/* ==========================================================================
+   SMARTBIZ - POINT OF SALE (POS) FULL ARCHITECTURE
+   ========================================================================== */
+
+   .pos-layout-container {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr; /* Uwiano kamili wa Skrini */
+    gap: 1.5rem;
+    height: calc(100vh - 120px);
+}
+
+/* Sehemu ya Gridi ya Bidhaa */
+.pos-products-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.pos-filter-bar {
+    display: flex;
+    gap: 1rem;
+}
+
+.pos-search-field {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.pos-search-field:focus {
+    border-color: #0d9488;
+}
+
+.pos-category-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    outline: none;
+}
+
+.products-invoice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+/* Kadi ya Bidhaa (Product Card) */
+.pos-product-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    transition: all 0.2s ease;
+}
+
+.pos-product-card:hover {
+    transform: translateY(-2px);
+    border-color: #0d9488;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.pos-prod-img-box {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    background: #f1f5f9;
+}
+
+.pos-prod-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pos-stock-tag {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(15, 23, 42, 0.75);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+}
+
+.pos-stock-tag.warning {
+    background: #ef4444; /* Nyekundu kama stoki ni ndogo */
+}
+
+.pos-prod-details {
+    padding: 0.75rem;
+}
+
+.pos-prod-details h4 {
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pos-prod-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0d9488;
+}
+
+/* ==========================================================================
+   UPANDE WA TOROLI (CART PANEL)
+   ========================================================================== */
+.pos-cart-section {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    height: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.cart-header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.btn-clear-cart {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.cart-items-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.cart-empty-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 3rem 1rem;
+}
+
+.cart-empty-state span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Safu ya Bidhaa Moja Ndani ya Toroli */
+.cart-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.85rem;
+}
+
+.cart-item-info {
+    flex: 1.2;
+}
+
+.cart-item-info h4 {
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+}
+
+.cart-item-info p {
+    color: #64748b;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.cart-item-actions button {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.item-qty-value {
+    font-weight: 700;
+    color: #0f172a;
+    min-width: 20px;
+    text-align: center;
+}
+
+.cart-item-total-price {
+    font-weight: 700;
+    color: #0f172a;
+    flex: 0.8;
+    text-align: right;
+}
+
+/* Kikokotoo cha Chini (Totals Box) */
+.cart-summary-box {
+    border-top: 2px dashed #e2e8f0;
+    padding-top: 1rem;
+    background: #f8fafc;
+    margin: 0 -1.25rem -1.25rem -1.25rem;
+    padding: 1.25rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.pos-summary-input {
+    width: 80px;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.total-line {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.btn-checkout-pay {
+    width: 100%;
+    padding: 0.9rem;
+    background: #0d9488;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-checkout-pay:hover {
+    background: #0f766e;
+}
+
+/* Muundo wa Simu/Tablet */
+@media (max-width: 1024px) {
+    .pos-layout-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}

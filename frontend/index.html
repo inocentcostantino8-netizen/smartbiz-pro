@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBiz - Ingia Mfomuni</title>
+    <!-- CSS ya Kimataifa na CSS ya Login -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!--$env:PYTHONPATH="."; python backend/main.py-->
+</head>
+<body>
+
+    <!-- Container kuu inayofanya mgawanyiko wa Kushoto na Kulia -->
+    <div class="login-container">
+        
+        <!-- UPANDE WA KUSHOTO: Picha inayojaza eneo lote la nyuma -->
+        <div class="brand-panel">
+            <div class="brand-image-wrapper">
+                <img id="loginIllustration" src="assets/images/login-bg.jpg" alt="SmartBiz Dashboard Preview" class="login-img">
+            </div>
+            <!-- Maandishi yanayoelea mbele -->
+            <div class="brand-content">
+                <h1 class="brand-logo">SmartBiz</h1>
+                <p class="brand-subtitle">Business Management System</p>
+            </div>
+        </div>
+
+        <!-- UPANDE WA KULIA: Fomu ya Kuingia -->
+        <div class="form-panel">
+            <div class="form-box">
+                <!-- Nembo ya Simu (Inaonekana kwenye skrini ndogo tu) -->
+                <div class="mobile-logo">SmartBiz</div>
+                <h2>Karibu Tena</h2>
+                <p class="form-desc">Tafadhali weka taarifa zako ili kuingia kwenye akaunti</p>
+                
+                <!-- REKEBISHO LA FOMU YA LOGIN NDANI YA index.html -->
+                <form id="loginForm" style="display: flex; flex-direction: column; gap: 1.2rem; width: 100%; max-width: 360px; margin: 0 auto;">
+    
+                    <!-- BARUA PEPE -->
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <label style="font-size: 0.85rem; font-weight: 600; color: #334155;">Barua Pepe (Email)</label>
+                        <input type="email" id="loginEmail" required placeholder="salma@smartbiz.com" style="padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; width: 100%;">
+                    </div>
+                
+                    <!-- NENOSIRI YENYE JICHO LA SHOW/HIDE -->
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 0.4rem; position: relative;">
+                        <label style="font-size: 0.85rem; font-weight: 600; color: #334155;">Nenosiri (Password)</label>
+                        <div style="position: relative; width: 100%;">
+                            <input type="password" id="loginPassword" required placeholder="******" style="padding: 10px 40px 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; width: 100%;">
+                            <!-- Kitufe cha Jicho la kuangalia password -->
+                            <span id="togglePasswordIcon" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #64748b; user-select: none; font-size: 1.1rem;">👁️</span>
+                        </div>
+                    </div>
+                
+                    <!-- NIKUMBUKE & UMESAHAU NENOSIRI -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+                        <label style="display: flex; align-items: center; gap: 6px; color: #475569; cursor: pointer;">
+                            <input type="checkbox" id="rememberMeCheck" style="cursor: pointer; width: 15px; height: 15px;"> Nikumbuke
+                        </label>
+                        <a href="#" id="btnForgotPassword" style="color: #2563eb; text-decoration: none; font-weight: 600;">Umesahau nenosiri?</a>
+                    </div>
+                
+                    <button type="submit" style="background: #2563eb; color: #fff; border: none; padding: 12px; border-radius: 6px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s;">
+                        Ingia Mfomuni
+                    </button>
+                </form>
+                
+                <!-- MODAL POPUP YA UMESAHAU NENOSIRI (RESET PASSWORD POPUP) -->
+                <div id="forgotPasswordModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); justify-content: center; align-items: center; z-index: 9999; padding: 1rem;">
+                    <div style="background: #fff; padding: 2rem; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);">
+                        <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.25rem; color: #1e293b;">Weka Nenosiri Jipya</h3>
+                        <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1.5rem;">Thibitisha barua pepe yako ili uweze kubadilisha nenosiri kwenye database.</p>
+                        
+                        <form id="resetPasswordForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div class="input-group" style="display: flex; flex-direction: column; gap: 0.3rem;">
+                                <label style="font-size: 0.8rem; font-weight: 600;">Barua Pepe Yako</label>
+                                <input type="email" id="resetEmail" required placeholder="salma@smartbiz.com" style="padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                            </div>
+                            <div class="input-group" style="display: flex; flex-direction: column; gap: 0.3rem;">
+                                <label style="font-size: 0.8rem; font-weight: 600;">Nenosiri Jipya</label>
+                                <input type="password" id="resetNewPassword" required placeholder="******" style="padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                <button type="button" id="btnCancelReset" style="flex: 1; padding: 10px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-weight: 600;">Ghairi</button>
+                                <button type="submit" style="flex: 1; padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 700;">Hifadhi Upya</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div> <!-- Mwisho wa login-container -->
+
+    <!-- JavaScript kwa ajili ya kushughulikia Login -->
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

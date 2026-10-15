@@ -1,0 +1,26 @@
+:root {
+    /* Color Palette */
+    --bg-primary: #0f172a;      /* Dark slate sidebar */
+    --bg-secondary: #1e293b;    /* Highlighted item background */
+    --accent-teal: #0d9488;     /* Bright corporate brand teal */
+    --accent-teal-hover: #0f766e;
+    --bg-light: #f8fafc;        /* Soft main background body */
+    --text-dark: #1e293b;       /* Prominent header typography */
+    --text-muted: #64748b;      /* Captions and labels */
+    
+    /* Layout Frameworks */
+    --sidebar-width: 260px;
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
