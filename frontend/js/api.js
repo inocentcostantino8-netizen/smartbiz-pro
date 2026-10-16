@@ -2,7 +2,9 @@
 // SMARTBIZ SYSTEM - CENTRAL DATA SYNCHRONIZATION CONNECTOR (API UTILITIES)
 // =========================================================================
 // Badilisha kutoka localhost kwenda hapa:
-const API_BASE_URL = "https://onrender.com";
+// REKEBISHO: Weka link kamili ya server yako ya Render hapa chini
+const API_BASE_URL = "https://smartbiz-pro-h0zn.onrender.com";
+
 
 const API = {
     // 1. STANDARD GET METHOD (KUVUTA DATA)
