@@ -1,13 +1,16 @@
+import os
 import mysql.connector
 from fastapi import HTTPException
 
 # =========================================================================
 # CENTRAL MYSQL CONFIGURATIONS (UNIVERSAL DRIVER LAYER)
 # =========================================================================
-DB_HOST = "localhost"
-DB_USER = "root"
-DB_PASSWORD = "admin"  # <-- Make sure this password matches your MySQL root account!
-DB_PORT = 3306
+# Mfumo sasa hivi utasoma Environment Variables za Render, na usipozipata utatumia localhost kama fallback (kompyuta yako)
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_USER = os.getenv("DB_USER", "root")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "admin")
+DB_PORT = int(os.getenv("DB_PORT", 3306))
+DB_NAME = os.getenv("DB_NAME", "smartbiz_db")
 
 def get_db_connection():
     """Tengeneza daraja thabiti na PostgreSQL/MySQL linalokwenda moja kwa moja kwenye database yetu."""
@@ -17,7 +20,7 @@ def get_db_connection():
             user=DB_USER,
             password=DB_PASSWORD,
             port=DB_PORT,
-            database="smartbiz_db"  # <-- SULUHISHO: Ongeza mstari huu hapa ili kuzuia kosa la 'No database selected'
+            database=DB_NAME  # <-- Inasoma jina la database kiotomatiki
         )
         return connection
     except Exception as e:
