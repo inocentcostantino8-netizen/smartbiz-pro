@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 // Tunatuma ombi la kuingia na kusubiri majibu yajae kwenye variable ya 'result' kwanza!
-                const result = await API.post("/login", formData, true);
+                const result = await API.post("/auth/login", formData, true);
                 
                 // REKEBISHO KUU: Sasa neno result lipo hai na linatambulika kikamilifu na kivinjari hapa!
                 const storageEngine = rememberMeCheck && rememberMeCheck.checked ? localStorage : sessionStorage;
