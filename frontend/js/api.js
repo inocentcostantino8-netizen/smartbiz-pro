@@ -1,10 +1,8 @@
 // =========================================================================
 // SMARTBIZ SYSTEM - CENTRAL DATA SYNCHRONIZATION CONNECTOR (API UTILITIES)
 // =========================================================================
-// Badilisha kutoka localhost kwenda hapa:
-// REKEBISHO: Weka link kamili ya server yako ya Render hapa chini
+// REKEBISHO LA UHAKIKA: Link yako halisi ya Render ikitumia dashi (-) badala ya underscore (_)
 const API_BASE_URL = "https://smartbiz-pro-h0zn.onrender.com";
-
 
 const API = {
     // 1. STANDARD GET METHOD (KUVUTA DATA)
@@ -71,7 +69,7 @@ const API = {
         }
     },
 
-    // 4. STANDARD PUT METHOD (KUHARIRI NA KUBADILISHA TAARIFA ZOTE - REKEBISHO)
+    // 4. STANDARD PUT METHOD (KUHARIRI NA KUBADILISHA TAARIFA ZOTE)
     async put(endpoint, data) {
         const token = localStorage.getItem("smartbiz_token") || sessionStorage.getItem("smartbiz_token");
         const headers = { "Content-Type": "application/json" };
@@ -110,4 +108,4 @@ const API = {
             throw error;
         }
     }
-}; // <-- Mabano haya yanatakiwa kufunga kitu kizima cha API hapa mwishoni!
+};
